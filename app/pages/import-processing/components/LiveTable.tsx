@@ -482,9 +482,10 @@ export default function LiveTable({ state }: LiveTableProps) {
                     onClick={() => {
                       navigator.clipboard.writeText(JSON.stringify(selectedRecord, null, 2));
                     }}
-                    title="Copy JSON"
                   >
-                    <Copy className="w-4 h-4" />
+                    <span title="Copy JSON">
+                      <Copy className="w-4 h-4" />
+                    </span>
                   </Button>
                   <Button
                     variant="ghost"
