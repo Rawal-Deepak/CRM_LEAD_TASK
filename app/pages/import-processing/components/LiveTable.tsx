@@ -488,7 +488,7 @@ export default function LiveTable({ state }: LiveTableProps) {
                     </span>
                   </Button>
                   <Button
-                    variant="ghost"
+                    variant="outline"
                     className="p-2 h-auto text-gray-500 hover:text-gray-700"
                     onClick={() => setSelectedRecord(null)}
                   >
