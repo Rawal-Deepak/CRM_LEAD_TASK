@@ -47,9 +47,11 @@ export function CrmStatusPill({ status }: { status: CrmStatus | string }) {
   }
 
   return (
-    <Badge color={statusBadgeColor(status as CrmStatus)} size="sm" className="gap-1.5 flex items-center w-fit">
-      {Icon && <Icon className="w-3.5 h-3.5" />}
-      {formatStatusLabel(status)}
+    <Badge color={statusBadgeColor(status as CrmStatus)} size="sm">
+      <span className="gap-1.5 flex items-center w-fit">
+        {Icon && <Icon className="w-3.5 h-3.5" />}
+        {formatStatusLabel(status)}
+      </span>
     </Badge>
   );
 }
