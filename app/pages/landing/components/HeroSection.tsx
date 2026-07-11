@@ -81,6 +81,14 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
                 variant="outline"
                 size="md"
                 startIcon={<Download size={18} />}
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/groweasy_sample_250_records.csv";
+                  link.download = "groweasy_sample_250_records.csv";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 Download Sample CSV
               </Button>
