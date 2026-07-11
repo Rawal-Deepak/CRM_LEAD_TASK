@@ -13,7 +13,7 @@ interface TableHeaderProps extends React.HTMLAttributes<HTMLTableSectionElement>
 }
 
 // Props for TableBody
-interface TableBodyProps extends React.HTMLAttributes<HTMLSectionElement> {
+interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionElement> {
   children: ReactNode;
   className?: string;
 }
