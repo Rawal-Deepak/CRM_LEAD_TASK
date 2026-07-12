@@ -1,12 +1,32 @@
-import LandingPage from "./pages/landing/LandingPage";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+import HeroSection from "./components/HeroSection";
+import WorkflowSection from "./components/WorkflowSection";
+import FeatureSection from "./components/FeatureSection";
+import BenefitsSection from "./components/BenefitsSection";
+import AIMappingSection from "./components/AIMappingSection";
+import CTASection from "./components/CTASection";
+import Footer from "./components/Footer";
+import UploadModal from "./components/UploadModal";
+
+export default function LandingPage() {
+  const [showUploadModal, setShowUploadModal] = useState(false);
+
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-950 flex flex-col">
-      {/* Main Content Area */}
-      <main className="flex-1">
-        <LandingPage />
-      </main>
-    </div>
+    <>
+      <HeroSection onGetStarted={() => setShowUploadModal(true)} />
+      <WorkflowSection />
+      <FeatureSection />
+      <BenefitsSection />
+      <AIMappingSection />
+      <CTASection onGetStarted={() => setShowUploadModal(true)} />
+      <Footer />
+
+      <UploadModal
+        isOpen={showUploadModal}
+        onClose={() => setShowUploadModal(false)}
+      />
+    </>
   );
 }

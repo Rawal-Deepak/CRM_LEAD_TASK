@@ -120,7 +120,7 @@ export default function PreviewTable({ data, columns: headerKeys, globalFilter }
                           header.column.columnDef.header,
                           header.getContext()
                         )}
-                    {/* Resizer */}
+                    {/* Column resize handle */}
                     <div
                       {...{
                         onDoubleClick: () => header.column.resetSize(),
@@ -193,7 +193,7 @@ export default function PreviewTable({ data, columns: headerKeys, globalFilter }
         )}
       </div>
 
-      {/* Pagination Footer */}
+      {/* Pagination controls */}
       {(table.getPageCount() > 1 || table.getState().pagination.pageSize !== 50) && (
         <div className="flex items-center justify-between px-6 py-3 border-t border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
           <div className="flex items-center gap-4">
