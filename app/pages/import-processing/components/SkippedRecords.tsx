@@ -13,7 +13,7 @@ function formatRowRef(row: number | Record<string, unknown>): string {
 export default function SkippedRecords({ state }: { state: ImportState }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  /* ── Skeleton ──────────────────────────────────────────────── */
+  // Initial skeleton loader
   if (state.phase === "idle") {
     return (
       <div className="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 shadow-sm p-5 animate-pulse">
@@ -36,7 +36,7 @@ export default function SkippedRecords({ state }: { state: ImportState }) {
       animate={{ opacity: 1, y: 0 }}
       className="border border-amber-200 dark:border-amber-900/50 rounded-2xl bg-amber-50/60 dark:bg-amber-950/20 overflow-hidden"
     >
-      {/* ── Accordion Header ───────────────────────────────────── */}
+      {/* Accordion Header */}
       <button
         type="button"
         className="w-full flex items-center justify-between p-4 sm:p-5 cursor-pointer hover:bg-amber-100/50 dark:hover:bg-amber-900/20 transition-colors text-left"
@@ -59,7 +59,7 @@ export default function SkippedRecords({ state }: { state: ImportState }) {
         </span>
       </button>
 
-      {/* ── Accordion Body ─────────────────────────────────────── */}
+      {/* Accordion Body */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

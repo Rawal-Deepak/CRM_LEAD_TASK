@@ -7,7 +7,7 @@ import { useAnimatedCounter } from "../hooks/useAnimatedCounter";
 // Fallback if Layers3 is not in the installed lucide-react version
 const BatchIcon = Layers3 || Layers;
 
-/* ── AI Pulse Icon ─────────────────────────────────────────────── */
+// Decorative pulse icon for the AI progress card
 function AIPulseIcon({ isCompleted }: { isCompleted: boolean }) {
   return (
     <div className="relative flex items-center justify-center w-12 h-12 shrink-0">
@@ -24,7 +24,7 @@ function AIPulseIcon({ isCompleted }: { isCompleted: boolean }) {
   );
 }
 
-/* ── Inline Metric Block ───────────────────────────────────────── */
+// Reusable metric block for displaying individual stats (e.g. Processed, Validation)
 function MetricBlock({
   label,
   value,
@@ -56,7 +56,7 @@ function MetricBlock({
   );
 }
 
-/* ── Main Component ────────────────────────────────────────────── */
+// Main hero component displaying overall progress and key metrics
 export default function HeroProgressCard({
   state,
   totalBatches,
@@ -85,7 +85,7 @@ export default function HeroProgressCard({
     return () => clearInterval(timer);
   }, [state.phase, state.elapsedSeconds]);
 
-  /* ── Skeleton ──────────────────────────────────────────────── */
+  // Loading skeleton for the initial idle state
   if (isIdle) {
     return (
       <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm p-6 sm:p-8 animate-pulse">
@@ -110,7 +110,7 @@ export default function HeroProgressCard({
     );
   }
 
-  /* ── Derived values ────────────────────────────────────────── */
+  // Calculate derived values for the metric blocks
   const validRecords = state.processedRecords - (state.skippedRecords?.length || 0);
   const validationPercentage = state.processedRecords === 0 
     ? 0 
@@ -125,7 +125,7 @@ export default function HeroProgressCard({
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white/0 dark:from-gray-800/20 dark:to-gray-900/0 pointer-events-none" />
       
       <div className="relative z-10">
-        {/* ── Row 1: AI icon + title + percentage ────── */}
+        {/* Header: AI icon, title, and animated percentage */}
         <div className="flex items-center gap-4 mb-6 sm:mb-8">
           <AIPulseIcon isCompleted={isCompleted} />
 
@@ -144,7 +144,7 @@ export default function HeroProgressCard({
           </div>
         </div>
 
-        {/* ── Progress Bar ────────────────────────────────── */}
+        {/* Progress Bar */}
         <div className="h-3 sm:h-3.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden relative mb-8 shadow-inner">
           <motion.div
             className={`absolute top-0 left-0 bottom-0 rounded-full ${
@@ -156,7 +156,7 @@ export default function HeroProgressCard({
           />
         </div>
 
-        {/* ── Inline Metrics Row ──────────────────────────── */}
+        {/* Four-column grid displaying live metric blocks */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-4 sm:gap-0">
           <MetricBlock
             label="Processed"

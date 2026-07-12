@@ -43,7 +43,7 @@ export default function ImportProcessingPage() {
   return (
     <div className="min-h-screen w-full bg-gray-50 dark:bg-gray-950 flex flex-col pb-24">
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* ── Hero: "AI Import" title + rotating AI status ────────── */}
+        {/* Hero section with title and rotating status */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export default function ImportProcessingPage() {
           </div>
         </motion.div>
 
-        {/* ── Processing Card ────────────────────────────────────── */}
+        {/* Processing Card */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export default function ImportProcessingPage() {
           <HeroProgressCard state={state} totalBatches={totalBatches} />
         </motion.div>
 
-        {/* ── Skipped Records Accordion ──────────────────────────── */}
+        {/* Skipped Records Accordion */}
         {!isError && (
           <>
             <div className="mb-6">

@@ -94,7 +94,7 @@ export default function WorkflowSection() {
           variants={stagger}
           className="relative max-w-2xl mx-auto"
         >
-          {/* Continuous vertical line */}
+          {/* Vertical connecting line for the timeline */}
           <div className="absolute left-[27px] top-[24px] bottom-[24px] w-0.5 bg-gray-200 dark:bg-gray-800 hidden sm:block" />
           
           <div className="space-y-6 sm:space-y-12">
@@ -104,7 +104,7 @@ export default function WorkflowSection() {
                 variants={fadeUp}
                 className="relative sm:pl-20"
               >
-                {/* Timeline node */}
+                {/* Circular timeline node with step number */}
                 <div className="hidden sm:flex absolute left-0 top-6 w-14 h-14 rounded-2xl bg-[#FAFBFC] dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm items-center justify-center z-0 transition-colors duration-300">
                   <span className="text-lg font-bold text-gray-400 dark:text-gray-600">{step.num}</span>
                 </div>

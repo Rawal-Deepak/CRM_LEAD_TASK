@@ -27,7 +27,7 @@ export default function BenefitsSection() {
           variants={stagger}
           className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-16 items-start"
         >
-          {/* Left column */}
+          {/* Header and description column */}
           <motion.div variants={fadeUp}>
             <h2 className="text-xl font-semibold text-gray-800 dark:text-white/90 mb-3">
               Why GrowEasy AI
@@ -40,7 +40,7 @@ export default function BenefitsSection() {
             </p>
           </motion.div>
 
-          {/* Right column — benefits list */}
+          {/* Bulleted list of benefits */}
           <motion.div
             variants={stagger}
             className="space-y-3"

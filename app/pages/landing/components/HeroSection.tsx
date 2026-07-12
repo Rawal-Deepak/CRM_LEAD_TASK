@@ -21,7 +21,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
 
   return (
     <Section className="overflow-hidden">
-      {/* Subtle grid background */}
+      {/* Decorative subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 pt-16 pb-12 sm:pt-24 sm:pb-20">
@@ -31,14 +31,14 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
           animate="visible"
           variants={stagger}
         >
-          {/* Label */}
+          {/* AI Feature Label */}
           <motion.div variants={fadeUp} className="mb-6">
             <Badge variant="light" color="primary" size="md">
               AI-Powered CSV Import
             </Badge>
           </motion.div>
 
-          {/* Heading */}
+          {/* Main Hero Heading */}
           <motion.h1
             variants={fadeUp}
             className="text-title-md sm:text-title-lg font-bold text-gray-800 dark:text-white/90 tracking-tight leading-tight"
@@ -50,7 +50,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
             </span>
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Explanatory Subtitle */}
           <motion.p
             variants={fadeUp}
             className="mt-5 text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
@@ -61,7 +61,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
             without manual configuration.
           </motion.p>
 
-          {/* CTAs */}
+          {/* Call to Action Buttons */}
           <motion.div
             variants={fadeUp}
             className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
@@ -96,7 +96,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
           </motion.div>
         </motion.div>
 
-        {/* Product Preview */}
+        {/* Mockup Product Preview Window */}
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
           <div
             className="relative rounded-2xl border border-gray-200 dark:border-gray-800 shadow-theme-lg overflow-hidden bg-white dark:bg-gray-950"
           >
-            {/* Browser chrome */}
+            {/* Safari/Chrome Browser header mockup */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
               <div className="flex gap-1.5">
                 <span className="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700" />
@@ -125,7 +125,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
               </div>
             </div>
 
-            {/* Fake table content */}
+            {/* Mocked CRM records table */}
             <div className="p-4 sm:p-6">
               <div className="flex items-center justify-between mb-4">
                 <div>
@@ -141,7 +141,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
                 </Badge>
               </div>
 
-              {/* Table header */}
+              {/* Table Column Headers */}
               <div className="overflow-x-auto">
                 <div className="min-w-[600px]">
                   <div className="grid grid-cols-5 gap-px bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden text-theme-xs font-medium text-gray-500 dark:text-gray-400">
@@ -152,7 +152,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
                     <div className="bg-gray-50 dark:bg-gray-900 px-3 py-2.5">Source</div>
                   </div>
 
-                  {/* Table rows */}
+                  {/* Render mock table rows */}
                   {[
                     ["Rahul Sharma", "rahul@email.com", "+91 98765 43210", "Priya M.", "Facebook Ads"],
                     ["Anita Desai", "anita.d@mail.in", "+91 87654 32109", "Vikram S.", "Google Ads"],
@@ -174,7 +174,7 @@ export default function HeroSection({ onGetStarted }: { onGetStarted: () => void
             </div>
           </div>
 
-          {/* Floating Statistic Chips */}
+          {/* Floating feature stats around the mockup */}
           <div className="absolute inset-0 pointer-events-none z-[1] hidden md:block">
             <motion.div 
               className="absolute -left-12 top-12 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200 dark:border-gray-800 shadow-theme-md rounded-xl px-4 py-3 flex items-center gap-3"

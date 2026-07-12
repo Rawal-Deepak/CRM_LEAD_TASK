@@ -39,7 +39,7 @@ export default function ImportFooter({ state, onRetry }: ImportFooterProps) {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* ── Left: Connection Status ──────────────────────────── */}
+        {/* Connection Status Indicator */}
         <div className="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2">
           {isError ? (
             <span className="text-red-600 dark:text-red-400 font-bold flex items-center gap-1.5">
@@ -62,7 +62,7 @@ export default function ImportFooter({ state, onRetry }: ImportFooterProps) {
           )}
         </div>
 
-        {/* ── Right: Actions ──────────────────────────────────── */}
+        {/* Footer Actions */}
         <div className="flex items-center gap-3 w-full sm:w-auto relative min-h-[40px]">
           <AnimatePresence mode="wait">
             {isError ? (

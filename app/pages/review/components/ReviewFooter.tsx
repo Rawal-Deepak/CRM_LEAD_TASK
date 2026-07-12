@@ -6,12 +6,12 @@ export default function ReviewFooter({ totalRows, totalColumns, disabled, onCanc
     <div className="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-3 flex flex-col sm:flex-row items-center justify-end gap-3 sm:gap-8">
         
-        {/* Left Side: Preview Rows Count */}
+        {/* Record and field counts display */}
         <div className="text-sm font-medium text-gray-500 dark:text-gray-400">
           <span className="text-gray-900 dark:text-white font-bold">{totalRows.toLocaleString()}</span> Records &bull; <span className="text-gray-900 dark:text-white font-bold">{totalColumns.toLocaleString()}</span> Fields
         </div>
         
-        {/* Right Side: Actions */}
+        {/* Footer action buttons */}
         <div className="grid grid-cols-2 sm:flex items-stretch sm:items-center gap-3 w-full sm:w-auto">
           <Button variant="outline" className="w-full h-full" onClick={onCancel}>
             Back

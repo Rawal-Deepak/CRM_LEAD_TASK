@@ -95,12 +95,12 @@ export default function UploadModal({
           Upload file
         </h3>
         
-        {/* Text content added above dropzone as requested */}
+        {/* Modal description text */}
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
           Upload your CSV document and GrowEasy AI will automatically map your columns and handle the rest.
         </p>
 
-        {/* Drop Zone / File Input */}
+        {/* Drag and drop file zone */}
         <label 
           className={`flex flex-col items-center justify-center rounded-[20px] border border-dashed p-12 mb-3 transition-all duration-200 cursor-pointer group relative min-h-[240px] ${
             isDragging 
@@ -131,7 +131,7 @@ export default function UploadModal({
                 e.preventDefault();
               }}
             >
-              {/* Centered File Icon */}
+              {/* Upload state icon */}
               <div className="mb-4 text-brand-600 dark:text-brand-400">
                 {status === 'completed' ? (
                   <CheckCircle2 size={42} strokeWidth={1.5} className="text-green-500" />
@@ -140,7 +140,7 @@ export default function UploadModal({
                 )}
               </div>
               
-              {/* File Info */}
+              {/* Selected file details */}
               <p className="text-base font-bold text-gray-900 dark:text-white truncate w-full mb-1">
                 {selectedFile?.name}
               </p>
@@ -152,7 +152,7 @@ export default function UploadModal({
                 {status === 'completed' && `Ready!`}
               </p>
               
-              {/* Progress Bar with Percentage at the end */}
+              {/* Upload progress indicator */}
               <div className="w-full flex items-center gap-3">
                 <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                   <div 

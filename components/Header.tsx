@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-[60] lg:px-10 flex w-full items-center justify-between bg-white dark:bg-gray-900 px-4 py-4 border-b border-gray-200 dark:border-gray-800 shadow-theme-sm">
-      {/* Left: Logo and Title */}
+      {/* App branding */}
       <div className="flex items-center gap-2">
         <div className="rounded-lg">
           <Image 
@@ -49,7 +49,7 @@ export default function Header() {
         </span>
       </div>
 
-      {/* Right: Github and Theme Toggle */}
+      {/* Global actions and toggles */}
       <div className="flex items-center justify-end gap-3">
         <a 
           href="https://github.com" 

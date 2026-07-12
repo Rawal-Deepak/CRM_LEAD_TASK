@@ -66,7 +66,7 @@ const Input: FC<InputProps> = ({
         className={inputClasses}
       />
 
-      {/* Optional Hint Text */}
+      {/* Render optional hint or error message */}
       {hint && (
         <p
           className={`mt-1.5 text-xs ${

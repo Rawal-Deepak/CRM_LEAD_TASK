@@ -93,7 +93,7 @@ export default function LiveTable({ state }: LiveTableProps) {
     return val.length > max ? val.slice(0, max) + "..." : val;
   };
 
-  /* ── React Table Setup ─────────────────────────────────────── */
+  // React Table configuration and column definitions
   const columns = useMemo<ColumnDef<any>[]>(() => {
     return CRM_FIELDS.map((field) => ({
       accessorKey: field.key,
@@ -121,7 +121,7 @@ export default function LiveTable({ state }: LiveTableProps) {
 
   const { rows } = table.getRowModel();
 
-  /* ── Virtualizer ─────────────────────────────────────────────── */
+  // Virtualize rows for performance with large datasets
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => scrollContainerRef.current,
@@ -185,7 +185,7 @@ export default function LiveTable({ state }: LiveTableProps) {
     setNewRecordCount(0);
   }, []);
 
-  /* ── Keyboard shortcut for Search ────────────────────────────── */
+  // Add a keyboard shortcut (Cmd/Ctrl + F) to focus the search input
   const searchInputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -198,7 +198,7 @@ export default function LiveTable({ state }: LiveTableProps) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  /* ── Skeleton (idle phase) ───────────────────────────────────── */
+  // Show a skeleton loader during the initial idle state
   if (state.phase === "idle") {
     return (
       <div className="border border-gray-100 dark:border-gray-800/60 rounded-2xl bg-white dark:bg-gray-900 shadow-sm overflow-hidden animate-pulse">
@@ -218,7 +218,7 @@ export default function LiveTable({ state }: LiveTableProps) {
 
   return (
     <div className="space-y-3 relative">
-      {/* ── Controls Bar ──────────────────────────────────────── */}
+      {/* Top controls bar: Search input, Status filter, and Sort dropdown */}
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -455,7 +455,7 @@ export default function LiveTable({ state }: LiveTableProps) {
         </div>
       </div>
 
-      {/* ── Row Detail Drawer / Modal ────────────────────────────── */}
+      {/* Slide-out drawer for viewing record details */}
       <AnimatePresence>
         {selectedRecord && (
           <>

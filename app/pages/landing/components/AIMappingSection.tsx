@@ -59,7 +59,7 @@ export default function AIMappingSection() {
           variants={stagger}
           className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03] overflow-hidden"
         >
-          {/* Table header */}
+          {/* Column headers for the mapping table */}
           <div className="grid grid-cols-[1fr_40px_1fr] items-center px-5 sm:px-6 py-3.5 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
             <span className="text-theme-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
               CSV Column
@@ -70,7 +70,7 @@ export default function AIMappingSection() {
             </span>
           </div>
 
-          {/* Mapping rows */}
+          {/* Render individual semantic mapping examples */}
           {MAPPINGS.map((m, idx) => {
             const isActive = hoveredIdx !== null ? hoveredIdx === idx : activeIdx === idx;
 
@@ -86,7 +86,7 @@ export default function AIMappingSection() {
                     : "hover:bg-gray-50/50 dark:hover:bg-white/[0.02]"
                 }`}
               >
-                {/* Source */}
+                {/* Source CSV column name */}
                 <span
                   className={`inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-150 ${
                     isActive
@@ -97,7 +97,7 @@ export default function AIMappingSection() {
                   {m.from}
                 </span>
 
-                {/* Arrow */}
+                {/* Animated directional arrow */}
                 <div className="flex justify-center">
                   <motion.div
                     animate={{ 
@@ -117,7 +117,7 @@ export default function AIMappingSection() {
                   </motion.div>
                 </div>
 
-                {/* Target */}
+                {/* Target CRM field name */}
                 <span
                   className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
