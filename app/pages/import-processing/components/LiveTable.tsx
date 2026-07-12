@@ -248,44 +248,44 @@ export default function LiveTable({ state }: LiveTableProps) {
           </div>
         </div>
         
-        <div className="flex gap-2 relative">
-          <div className="relative">
+        <div className="flex gap-2 relative w-full sm:w-auto">
+          <div className="relative flex-1 sm:flex-none">
             <Button
               variant="outline"
-              className={`text-sm gap-2 bg-white dark:bg-gray-900 !py-3.5 ${statusFilter !== 'ALL' ? 'border-brand-500 text-brand-600 bg-brand-50 dark:bg-brand-900/20' : ''}`}
+              className={`w-full justify-center sm:justify-start text-sm gap-2 bg-white dark:bg-gray-900 !py-3.5 ${statusFilter !== 'ALL' ? 'border-brand-500 text-brand-600 bg-brand-50 dark:bg-brand-900/20' : ''}`}
               onClick={() => { setShowStatusDropdown(!showStatusDropdown); setShowSortDropdown(false); }}
             >
               <SlidersHorizontal className="w-4 h-4" />
-              <span className="hidden sm:inline">
+              <span>
                 {STATUS_OPTIONS.find(o => o.value === statusFilter)?.label || "Status"}
               </span>
             </Button>
             {showStatusDropdown && (
-              <div className="absolute right-0 sm:left-0 top-full mt-1 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-50 overflow-hidden">
+              <div className="absolute left-0 top-full mt-1 min-w-[200px] w-full sm:w-max bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-50 overflow-hidden">
                 {STATUS_OPTIONS.map((opt) => (
                   <button
                     key={opt.value}
                     onClick={() => { setStatusFilter(opt.value as any); setShowStatusDropdown(false); }}
                     className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center justify-between"
                   >
-                    {opt.label}
-                    {statusFilter === opt.value && <Check className="w-4 h-4 text-brand-500" />}
+                    <span className="flex-1">{opt.value === "ALL" ? opt.label : <CrmStatusPill status={opt.value} />}</span>
+                    {statusFilter === opt.value && <Check className="w-4 h-4 text-brand-500 flex-shrink-0 ml-3" />}
                   </button>
                 ))}
               </div>
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative flex-1 sm:flex-none">
             <Button
               variant="outline"
-              className="text-sm gap-2 bg-white dark:bg-gray-900 !py-3.5"
+              className="w-full justify-center sm:justify-start text-sm gap-2 bg-white dark:bg-gray-900 !py-3.5"
               onClick={() => { setShowSortDropdown(!showSortDropdown); setShowStatusDropdown(false); }}
             >
               Sort <ChevronDown className="w-4 h-4" />
             </Button>
             {showSortDropdown && (
-              <div className="absolute right-0 top-full mt-1 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-50 overflow-hidden">
+              <div className="absolute right-0 sm:right-auto sm:left-0 top-full mt-1 min-w-[192px] w-full sm:w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-50 overflow-hidden">
                 <button
                   onClick={() => { setSortOption("created_at_asc"); setShowSortDropdown(false); }}
                   className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"

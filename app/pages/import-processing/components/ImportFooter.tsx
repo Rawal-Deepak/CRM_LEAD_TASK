@@ -123,8 +123,8 @@ export default function ImportFooter({ state, onRetry }: ImportFooterProps) {
                   disabled={state.progress < 100}
                 >
                   <Download size={16} />
-                  <span className="hidden sm:inline">Export Report</span>
-                  <span className="sm:hidden">Report</span>
+                  <span className="hidden sm:inline">Download CSV</span>
+                  <span className="sm:hidden">Download</span>
                 </Button>
 
                 <Button
